@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a3618b13-04fa-46f4-b355-793d85b0e025" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sample-cicd-azureFlow" doc:id="f62046d1-4e9c-41a3-a97f-a15abb3503cd" >
+		<http:listener doc:name="Listener" doc:id="e266c5b4-2a32-4c72-88be-75e9a31c75df" config-ref="HTTP_Listener_config" path="/samplecicd"/>
+		<set-payload value="Sample CICD Success" doc:name="Set Payload" doc:id="c29b59da-f386-4f77-b0db-b5006c11109b" />
+		<logger level="INFO" doc:name="Logger" doc:id="2bf09793-8b80-41fc-9f63-53ee8ba54a4a" message="#[payload]"/>
+	</flow>
+</mule>
