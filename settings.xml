@@ -1,0 +1,17 @@
+<settings>
+
+<servers>
+
+<server>
+
+<id>my.anypoint.credentials</id>
+
+<username>jaikishan-azuredevops</username>
+
+<password>Jaikishan@2023</password>
+
+</server>
+
+</servers>
+
+</settings>
